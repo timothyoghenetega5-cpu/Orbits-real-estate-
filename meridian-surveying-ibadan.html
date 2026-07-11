@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Meridian & Co. — Surveying Excellence. Building Property Confidence. | Ibadan</title>
+<meta name="description" content="Leading land surveying, property management and real estate transaction specialists in Ibadan, Oyo State, Nigeria.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,500&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy: #0B1929;
+    --navy-light: #132538;
+    --navy-mid: #1B3352;
+    --ivory: #F7F4EC;
+    --ivory-dim: #EDE8DA;
+    --gold: #C6A15B;
+    --gold-bright: #E0BC7A;
+    --gold-dim: #8C7239;
+    --charcoal: #1C2530;
+    --line: rgba(198,161,91,0.25);
+    --shadow-lg: 0 40px 80px -20px rgba(11,25,41,0.45);
+    --ease: cubic-bezier(.22,1,.36,1);
+  }
+
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'DM Sans', sans-serif;
+    background:var(--ivory);
+    color:var(--charcoal);
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  img{display:block; max-width:100%;}
+  a{text-decoration:none; color:inherit;}
+  h1,h2,h3,h4{font-family:'Cormorant Garamond', serif; font-weight:600; letter-spacing:0.01em;}
+  .eyebrow{
+    font-family:'DM Sans', sans-serif;
+    text-transform:uppercase;
+    letter-spacing:0.22em;
+    font-size:0.72rem;
+    font-weight:600;
+    color:var(--gold-dim);
+  }
+  @media (prefers-reduced-motion: reduce){
+    *{animation-duration:0.01ms !important; animation-iteration-count:1 !important; transition-duration:0.01ms !important; scroll-behavior:auto !important;}
+  }
+  :focus-visible{ outline:2px solid var(--gold); outline-offset:3px; }
+
+  /* ---------- NAV ---------- */
+  nav{
+    position:fixed; top:0; left:0; right:0; z-index:100;
+    background:rgba(255,255,255,0.86);
+    backdrop-filter:blur(16px) saturate(160%);
+    -webkit-backdrop-filter:blur(16px) saturate(160%);
+    border-bottom:1px solid rgba(11,25,41,0.06);
+    transition:box-shadow .4s var(--ease), background .4s var(--ease);
+  }
+  nav.scrolled{ box-shadow:0 8px 30px -12px rgba(11,25,41,0.15); }
+  .nav-inner{
+    max-width:1440px; margin:0 auto;
+    display:flex; align-items:center; justify-content:space-between;
+    padding:18px 48px;
+  }
+  .logo{
+    display:flex; align-items:center; gap:12px;
+    font-family:'Cormorant Garamond', serif;
+    font-size:1.5rem; font-weight:700; color:var(--navy);
+    letter-spacing:0.01em;
+  }
+  .logo-mark{
+    width:38px; height:38px; border-radius:50%;
+    background:linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%);
+    display:flex; align-items:center; justify-content:center;
+    position:relative; flex-shrink:0;
+  }
+  .logo-mark svg{ width:20px; height:20px; }
+  .logo-sub{
+    display:block; font-family:'DM Sans',sans-serif; font-size:0.62rem;
+    letter-spacing:0.18em; text-transform:uppercase; font-weight:600;
+    color:var(--gold-dim); margin-top:-2px;
+  }
+  .nav-links{
+    display:flex; align-items:center; gap:40px;
+    list-style:none;
+  }
+  .nav-links a{
+    font-size:0.92rem; font-weight:500; color:var(--charcoal);
+    position:relative; padding:4px 0;
+    transition:color .3s var(--ease);
+  }
+  .nav-links a::after{
+    content:''; position:absolute; left:0; bottom:-2px; width:0; height:1.5px;
+    background:var(--gold); transition:width .3s var(--ease);
+  }
+  .nav-links a:hover{ color:var(--gold-dim); }
+  .nav-links a:hover::after{ width:100%; }
+  .nav-right{ display:flex; align-items:center; gap:28px; }
+  .nav-phone{
+    display:flex; align-items:center; gap:8px;
+    font-weight:600; font-size:0.92rem; color:var(--navy);
+  }
+  .nav-phone svg{ width:16px; height:16px; stroke:var(--gold-dim); }
+  .btn{
+    display:inline-flex; align-items:center; justify-content:center; gap:8px;
+    padding:13px 28px; border-radius:100px;
+    font-family:'DM Sans',sans-serif; font-weight:600; font-size:0.88rem;
+    letter-spacing:0.02em;
+    cursor:pointer; border:none;
+    transition:transform .35s var(--ease), box-shadow .35s var(--ease), background .35s var(--ease);
+    white-space:nowrap;
+  }
+  .btn-gold{
+    background:linear-gradient(135deg, var(--gold-bright), var(--gold));
+    color:var(--navy);
+    box-shadow:0 8px 24px -8px rgba(198,161,91,0.6);
+  }
+  .btn-gold:hover{ transform:translateY(-2px); box-shadow:0 14px 32px -10px rgba(198,161,91,0.75); }
+  .btn-navy{
+    background:var(--navy);
+    color:var(--ivory);
+    box-shadow:0 8px 24px -10px rgba(11,25,41,0.5);
+  }
+  .btn-navy:hover{ transform:translateY(-2px); background:var(--navy-light); }
+  .btn-outline{
+    background:transparent; color:var(--navy);
+    border:1.5px solid rgba(11,25,41,0.18);
+  }
+  .btn-outline:hover{ border-color:var(--gold); color:var(--gold-dim); }
+  .nav-cta{ display:none; }
+  @media (min-width:1160px){ .nav-cta{ display:inline-flex; } }
+
+  .burger{ display:none; width:22px; height:16px; position:relative; cursor:pointer; background:none; border:none; }
+  .burger span{ position:absolute; left:0; width:100%; height:2px; background:var(--navy); border-radius:2px; }
+  .burger span:nth-child(1){ top:0; }
+  .burger span:nth-child(2){ top:7px; }
+  .burger span:nth-child(3){ top:14px; }
+
+  @media (max-width:1000px){
+    .nav-links{ display:none; }
+    .burger{ display:block; }
+    .nav-phone{ display:none; }
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative;
+    min-height:100vh;
+    background:linear-gradient(160deg, var(--navy) 0%, var(--navy-light) 55%, var(--navy-mid) 100%);
+    display:flex; align-items:center;
+    padding:140px 48px 90px;
+    overflow:hidden;
+  }
+  .hero-grid-overlay{
+    position:absolute; inset:0; pointer-events:none; opacity:0.55;
+    background-image:
+      linear-gradient(var(--line) 1px, transparent 1px),
+      linear-gradient(90deg, var(--line) 1px, transparent 1px);
+    background-size:64px 64px;
+    mask-image:radial-gradient(ellipse 80% 60% at 30% 40%, black 10%, transparent 75%);
+    -webkit-mask-image:radial-gradient(ellipse 80% 60% at 30% 40%, black 10%, transparent 75%);
+  }
+  .hero-glow{
+    position:absolute; width:900px; height:900px; border-radius:50%;
+    background:radial-gradient(circle, rgba(198,161,91,0.16) 0%, transparent 70%);
+    top:-300px; right:-200px; pointer-events:none;
+  }
+  .hero-inner{
+    position:relative; z-index:2;
+    max-width:1440px; margin:0 auto;
+    display:grid; grid-template-columns:1.05fr 0.95fr; gap:64px;
+    align-items:center; width:100%;
+  }
+  .hero-copy .eyebrow{ color:var(--gold-bright); margin-bottom:22px; display:flex; align-items:center; gap:10px; }
+  .hero-copy .eyebrow::before{
+    content:''; width:28px; height:1px; background:var(--gold-bright);
+  }
+  .hero-copy h1{
+    color:var(--ivory);
+    font-size:clamp(2.6rem, 4.2vw, 4.1rem);
+    line-height:1.08;
+    margin-bottom:26px;
+    max-width:12ch;
+  }
+  .hero-copy h1 em{
+    font-style:italic; color:var(--gold-bright);
+  }
+  .hero-copy p{
+    color:rgba(247,244,236,0.72);
+    font-size:1.1rem;
+    line-height:1.7;
+    max-width:46ch;
+    margin-bottom:40px;
+    font-weight:300;
+  }
+  .hero-ctas{ display:flex; gap:16px; flex-wrap:wrap; margin-bottom:56px; }
+  .hero-stats{
+    display:flex; gap:40px; flex-wrap:wrap;
+    padding-top:36px; border-top:1px solid rgba(247,244,236,0.14);
+  }
+  .hero-stat h3{ color:var(--gold-bright); font-size:2.1rem; margin-bottom:2px; }
+  .hero-stat span{ color:rgba(247,244,236,0.55); font-size:0.8rem; letter-spacing:0.04em; }
+
+  /* Right visual */
+  .hero-visual{ position:relative; height:640px; }
+  .hero-photo-frame{
+    position:absolute; top:0; right:0; width:88%; height:78%;
+    border-radius:22px; overflow:hidden;
+    box-shadow:var(--shadow-lg);
+    border:1px solid rgba(247,244,236,0.12);
+  }
+  .hero-photo-frame img{
+    width:100%; height:100%; object-fit:cover;
+    filter:saturate(1.05) contrast(1.03);
+  }
+  .hero-photo-frame::after{
+    content:''; position:absolute; inset:0;
+    background:linear-gradient(180deg, rgba(11,25,41,0) 40%, rgba(11,25,41,0.55) 100%);
+  }
+  .crosshair{
+    position:absolute; width:64px; height:64px; z-index:3;
+    top:38%; left:22%;
+    animation:crosshair-drift 7s ease-in-out infinite;
+  }
+  .crosshair svg{ width:100%; height:100%; }
+  @keyframes crosshair-drift{
+    0%,100%{ transform:translate(0,0) scale(1); opacity:0.85; }
+    50%{ transform:translate(10px,-14px) scale(1.06); opacity:1; }
+  }
+
+  .glass-card{
+    position:absolute;
+    background:rgba(255,255,255,0.10);
+    backdrop-filter:blur(18px) saturate(180%);
+    -webkit-backdrop-filter:blur(18px) saturate(180%);
+    border:1px solid rgba(255,255,255,0.22);
+    border-radius:16px;
+    padding:18px 20px;
+    box-shadow:0 20px 50px -16px rgba(0,0,0,0.5);
+    z-index:4;
+    animation:float 6s ease-in-out infinite;
+  }
+  .glass-card.c1{ top:6%; left:-6%; width:230px; animation-delay:0s; }
+  .glass-card.c2{ bottom:8%; right:2%; width:250px; animation-delay:1.4s; }
+  .glass-card.c3{ bottom:-4%; left:14%; width:210px; animation-delay:0.7s; }
+  @keyframes float{
+    0%,100%{ transform:translateY(0); }
+    50%{ transform:translateY(-12px); }
+  }
+  .glass-card .gc-label{
+    font-size:0.66rem; text-transform:uppercase; letter-spacing:0.14em;
+    color:var(--gold-bright); font-weight:600; margin-bottom:6px;
+    display:flex; align-items:center; gap:6px;
+  }
+  .glass-card .gc-title{ color:var(--ivory); font-family:'Cormorant Garamond',serif; font-size:1.2rem; font-weight:600; margin-bottom:4px; }
+  .glass-card .gc-sub{ color:rgba(247,244,236,0.65); font-size:0.78rem; }
+  .gc-dot{ width:6px; height:6px; border-radius:50%; background:var(--gold-bright); }
+
+  @media (max-width:1050px){
+    .hero-inner{ grid-template-columns:1fr; }
+    .hero-visual{ height:460px; margin-top:20px; }
+    .hero-copy p{ max-width:none; }
+  }
+  @media (max-width:640px){
+    .hero{ padding:120px 22px 70px; }
+    .hero-stats{ gap:26px; }
+    .glass-card{ display:none; }
+  }
+
+  /* ---------- SECTION SHELLS ---------- */
+  section{ padding:120px 48px; position:relative; }
+  .section-inner{ max-width:1280px; margin:0 auto; }
+  @media (max-width:640px){ section{ padding:80px 22px; } }
+
+  .section-head{ max-width:640px; margin-bottom:72px; }
+  .section-head .eyebrow{ display:flex; align-items:center; gap:10px; margin-bottom:18px; }
+  .section-head .eyebrow::before{ content:''; width:28px; height:1px; background:var(--gold-dim); }
+  .section-head h2{ font-size:clamp(2rem,3vw,2.8rem); color:var(--navy); line-height:1.15; }
+  .section-head p{ margin-top:18px; font-size:1.05rem; color:rgba(28,37,48,0.62); line-height:1.7; font-weight:300; }
+  .section-head.center{ margin-left:auto; margin-right:auto; text-align:center; }
+  .section-head.center .eyebrow{ justify-content:center; }
+  .section-head.center .eyebrow::before,.section-head.center .eyebrow::after{ content:''; width:28px; height:1px; background:var(--gold-dim); }
+
+  /* ---------- SERVICES ---------- */
+  .services{ background:var(--ivory); }
+  .services-grid{
+    display:grid; grid-template-columns:repeat(4, 1fr); gap:1px;
+    background:rgba(11,25,41,0.08);
+    border:1px solid rgba(11,25,41,0.08);
+    border-radius:20px;
+    overflow:hidden;
+  }
+  .service-card{
+    background:var(--ivory);
+    padding:44px 32px;
+    transition:background .4s var(--ease), transform .4s var(--ease);
+    position:relative;
+  }
+  .service-card:hover{ background:var(--navy); }
+  .service-card:hover .s-icon{ border-color:var(--gold); background:rgba(198,161,91,0.14); }
+  .service-card:hover .s-icon svg{ stroke:var(--gold-bright); }
+  .service-card:hover h3, .service-card:hover p{ color:var(--ivory); }
+  .service-card:hover p{ color:rgba(247,244,236,0.68); }
+  .service-card:hover .s-num{ color:rgba(247,244,236,0.25); }
+  .s-icon{
+    width:56px; height:56px; border-radius:14px;
+    border:1.5px solid rgba(11,25,41,0.14);
+    display:flex; align-items:center; justify-content:center;
+    margin-bottom:28px;
+    transition:all .4s var(--ease);
+  }
+  .s-icon svg{ width:26px; height:26px; stroke:var(--navy); stroke-width:1.5; transition:stroke .4s var(--ease); fill:none; }
+  .service-card h3{ font-size:1.35rem; color:var(--navy); margin-bottom:10px; transition:color .4s var(--ease); }
+  .service-card p{ font-size:0.92rem; color:rgba(28,37,48,0.58); line-height:1.65; font-weight:300; transition:color .4s var(--ease); }
+  .s-num{ position:absolute; top:24px; right:28px; font-family:'Cormorant Garamond',serif; font-size:0.85rem; color:rgba(11,25,41,0.2); transition:color .4s var(--ease); }
+
+  @media (max-width:1000px){ .services-grid{ grid-template-columns:repeat(2,1fr); } }
+  @media (max-width:600px){ .services-grid{ grid-template-columns:1fr; } }
+
+  /* ---------- PROJECTS / PROCESS STRIP ---------- */
+  .process{ background:var(--navy); color:var(--ivory); }
+  .process .section-head h2{ color:var(--ivory); }
+  .process .section-head p{ color:rgba(247,244,236,0.6); }
+  .process .eyebrow{ color:var(--gold-bright); }
+  .process-steps{
+    display:grid; grid-template-columns:repeat(4,1fr); gap:32px;
+  }
+  .process-step{
+    border-top:1px solid rgba(247,244,236,0.16);
+    padding-top:24px;
+  }
+  .process-step .p-mark{
+    font-family:'Cormorant Garamond',serif; font-style:italic;
+    color:var(--gold-bright); font-size:1.6rem; margin-bottom:14px; display:block;
+  }
+  .process-step h4{ color:var(--ivory); font-size:1.25rem; margin-bottom:10px; }
+  .process-step p{ color:rgba(247,244,236,0.58); font-size:0.9rem; line-height:1.65; font-weight:300; }
+  @media (max-width:900px){ .process-steps{ grid-template-columns:1fr 1fr; } }
+  @media (max-width:560px){ .process-steps{ grid-template-columns:1fr; } }
+
+  /* ---------- ABOUT / TRUST ---------- */
+  .about{ background:var(--ivory-dim); }
+  .about-inner{
+    display:grid; grid-template-columns:0.9fr 1.1fr; gap:80px; align-items:center;
+  }
+  .about-photo{
+    position:relative; border-radius:20px; overflow:hidden;
+    box-shadow:var(--shadow-lg); aspect-ratio:4/5;
+  }
+  .about-photo img{ width:100%; height:100%; object-fit:cover; }
+  .about-badge{
+    position:absolute; bottom:24px; left:24px; right:24px;
+    background:rgba(11,25,41,0.85);
+    backdrop-filter:blur(10px);
+    border:1px solid rgba(198,161,91,0.3);
+    border-radius:14px; padding:20px 22px;
+    color:var(--ivory);
+  }
+  .about-badge h4{ font-size:1.6rem; color:var(--gold-bright); margin-bottom:2px; }
+  .about-badge span{ font-size:0.78rem; color:rgba(247,244,236,0.65); letter-spacing:0.03em; }
+
+  .about-copy h2{ font-size:clamp(2rem,3vw,2.6rem); color:var(--navy); margin-bottom:24px; line-height:1.18; }
+  .about-copy p{ color:rgba(28,37,48,0.65); line-height:1.75; font-size:1.02rem; font-weight:300; margin-bottom:20px; }
+  .trust-list{ margin-top:32px; display:flex; flex-direction:column; gap:16px; }
+  .trust-item{ display:flex; align-items:flex-start; gap:14px; }
+  .trust-item svg{ width:20px; height:20px; stroke:var(--gold-dim); flex-shrink:0; margin-top:2px; }
+  .trust-item span{ font-size:0.96rem; color:var(--charcoal); font-weight:500; }
+
+  @media (max-width:960px){ .about-inner{ grid-template-columns:1fr; gap:48px; } }
+
+  /* ---------- CONTACT ---------- */
+  .contact{ background:var(--navy); color:var(--ivory); }
+  .contact .section-head h2{ color:var(--ivory); }
+  .contact .section-head p{ color:rgba(247,244,236,0.6); }
+  .contact .eyebrow{ color:var(--gold-bright); }
+  .contact-grid{
+    display:grid; grid-template-columns:1.1fr 0.9fr; gap:40px; align-items:stretch;
+  }
+  .map-frame{
+    border-radius:20px; overflow:hidden; min-height:460px;
+    border:1px solid rgba(247,244,236,0.14);
+    box-shadow:var(--shadow-lg);
+    position:relative;
+  }
+  .map-frame iframe{ width:100%; height:100%; min-height:460px; border:0; filter:grayscale(0.15) contrast(1.05); }
+
+  .contact-card{
+    background:rgba(255,255,255,0.06);
+    border:1px solid rgba(198,161,91,0.25);
+    border-radius:20px;
+    padding:44px 38px;
+    display:flex; flex-direction:column; gap:28px;
+    backdrop-filter:blur(10px);
+  }
+  .cc-block{ display:flex; gap:16px; align-items:flex-start; }
+  .cc-icon{
+    width:44px; height:44px; border-radius:12px; flex-shrink:0;
+    background:rgba(198,161,91,0.14); border:1px solid rgba(198,161,91,0.3);
+    display:flex; align-items:center; justify-content:center;
+  }
+  .cc-icon svg{ width:20px; height:20px; stroke:var(--gold-bright); fill:none; stroke-width:1.6; }
+  .cc-block h4{ font-family:'DM Sans',sans-serif; font-size:0.72rem; text-transform:uppercase; letter-spacing:0.12em; color:var(--gold-bright); margin-bottom:6px; font-weight:600; }
+  .cc-block p{ color:rgba(247,244,236,0.82); font-size:0.98rem; line-height:1.6; }
+  .cc-hours{ display:flex; justify-content:space-between; font-size:0.9rem; color:rgba(247,244,236,0.7); padding:6px 0; border-bottom:1px dashed rgba(247,244,236,0.12); }
+  .cc-hours:last-child{ border-bottom:none; }
+  .cc-hours span:last-child{ color:var(--gold-bright); font-weight:600; }
+  .contact-card .btn{ width:100%; margin-top:6px; }
+
+  @media (max-width:960px){ .contact-grid{ grid-template-columns:1fr; } .map-frame{ min-height:340px; } .map-frame iframe{ min-height:340px; } }
+
+  /* ---------- FOOTER ---------- */
+  footer{
+    background:var(--navy-light);
+    color:rgba(247,244,236,0.55);
+    padding:48px;
+    border-top:1px solid rgba(247,244,236,0.08);
+  }
+  .footer-inner{
+    max-width:1280px; margin:0 auto;
+    display:flex; justify-content:space-between; align-items:center;
+    flex-wrap:wrap; gap:20px;
+    font-size:0.85rem;
+  }
+  .footer-inner .logo{ color:var(--ivory); font-size:1.2rem; }
+  .footer-inner .logo-mark{ width:30px; height:30px; }
+  .footer-inner .logo-mark svg{ width:16px; height:16px; }
+
+  /* ---------- Scroll reveal ---------- */
+  .reveal{ opacity:0; transform:translateY(28px); transition:opacity .8s var(--ease), transform .8s var(--ease); }
+  .reveal.in{ opacity:1; transform:translateY(0); }
+
+  /* Sticky mobile call button */
+  .mobile-call{
+    display:none;
+    position:fixed; bottom:18px; left:50%; transform:translateX(-50%);
+    z-index:90; width:calc(100% - 36px); max-width:400px;
+  }
+  @media (max-width:640px){ .mobile-call{ display:flex; } .mobile-call .btn{ width:100%; } }
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <div class="nav-inner">
+    <a href="#home" class="logo">
+      <span class="logo-mark">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#E0BC7A" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 3v18M3 12h18"/></svg>
+      </span>
+      <span>Meridian&nbsp;&amp;&nbsp;Co.<span class="logo-sub">Survey · Realty · Ibadan</span></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="nav-right">
+      <a href="tel:+2348071082497" class="nav-phone">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        0807 108 2497
+      </a>
+      <a href="tel:+2348071082497" class="btn btn-gold nav-cta">Call Now</a>
+      <button class="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+
+<!-- ================= HERO ================= -->
+<header class="hero" id="home">
+  <div class="hero-grid-overlay"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-inner">
+    <div class="hero-copy">
+      <div class="eyebrow">LAND SURVEYORS &amp; ESTATE SURVEYORS · IBADAN, OYO STATE</div>
+      <h1>Surveying Excellence.<br>Building Property <em>Confidence.</em></h1>
+      <p>Precise land surveying, trusted property management and secure real estate transactions — serving families, developers and investors across Ibadan for over a decade.</p>
+      <div class="hero-ctas">
+        <a href="tel:+2348071082497" class="btn btn-gold">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0B1929" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          Call Now
+        </a>
+        <a href="#contact" class="btn btn-outline" style="color:#F7F4EC; border-color:rgba(247,244,236,0.3);">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#F7F4EC" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Get Directions
+        </a>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat"><h3>1,200+</h3><span>SURVEYS COMPLETED</span></div>
+        <div class="hero-stat"><h3>15 Yrs</h3><span>IN IBADAN REAL ESTATE</span></div>
+        <div class="hero-stat"><h3>C of O</h3><span>TITLE PERFECTION SUPPORT</span></div>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="hero-photo-frame">
+        <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=1200&auto=format&fit=crop" alt="Professional land surveyor with modern surveying equipment at a residential development site during golden hour in Ibadan">
+      </div>
+      <div class="crosshair">
+        <svg viewBox="0 0 64 64" fill="none">
+          <circle cx="32" cy="32" r="26" stroke="#E0BC7A" stroke-width="1" opacity="0.7"/>
+          <circle cx="32" cy="32" r="4" stroke="#E0BC7A" stroke-width="1.5"/>
+          <path d="M32 2v14M32 48v14M2 32h14M48 32h14" stroke="#E0BC7A" stroke-width="1" opacity="0.85"/>
+        </svg>
+      </div>
+      <div class="glass-card c1">
+        <div class="gc-label"><span class="gc-dot"></span>FEATURED PROJECT</div>
+        <div class="gc-title">Alekuwodo Gardens</div>
+        <div class="gc-sub">42 plots · Survey complete</div>
+      </div>
+      <div class="glass-card c2">
+        <div class="gc-label"><span class="gc-dot"></span>LAND PLAN</div>
+        <div class="gc-title">Beacon-to-Beacon</div>
+        <div class="gc-sub">GPS coordinate accuracy ±2cm</div>
+      </div>
+      <div class="glass-card c3">
+        <div class="gc-label"><span class="gc-dot"></span>PROPERTY MANAGED</div>
+        <div class="gc-title">Ring Road Residences</div>
+        <div class="gc-sub">98% occupancy rate</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ================= SERVICES ================= -->
+<section class="services" id="services">
+  <div class="section-inner">
+    <div class="section-head reveal">
+      <div class="eyebrow">WHAT WE DO</div>
+      <h2>Complete land &amp; property services, under one roof.</h2>
+      <p>From the first beacon planted on site to the title deed in your hands — our team guides every stage of your land and property journey with precision and transparency.</p>
+    </div>
+
+    <div class="services-grid">
+      <div class="service-card reveal">
+        <span class="s-num">01</span>
+        <div class="s-icon"><svg viewBox="0 0 24 24"><path d="M12 2v6M12 22v-6M4.93 4.93l4.24 4.24M14.83 14.83l4.24 4.24M2 12h6M22 12h-6M4.93 19.07l4.24-4.24M14.83 9.17l4.24-4.24"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <h3>Land Surveying</h3>
+        <p>Topographical, cadastral and boundary surveys carried out with certified equipment and registered surveyors.</p>
+      </div>
+      <div class="service-card reveal">
+        <span class="s-num">02</span>
+        <div class="s-icon"><svg viewBox="0 0 24 24"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-6h6v6"/></svg></div>
+        <h3>Property Management</h3>
+        <p>Full-service management of residential and commercial assets — tenancy, maintenance, and rent collection.</p>
+      </div>
+      <div class="service-card reveal">
+        <span class="s-num">03</span>
+        <div class="s-icon"><svg viewBox="0 0 24 24"><path d="M3 9l9-6 9 6v11a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"/><path d="M9 21V12h6v9"/></svg></div>
+        <h3>Real Estate Sales</h3>
+        <p>Verified plots, homes and developments across Ibadan, matched to your budget and long-term goals.</p>
+      </div>
+      <div class="service-card reveal">
+        <span class="s-num">04</span>
+        <div class="s-icon"><svg viewBox="0 0 24 24"><path d="M14 3v5a1 1 0 0 0 1 1h5M6 2h9l5 5v13a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2z"/><path d="M9 13h6M9 17h6"/></svg></div>
+        <h3>Title &amp; Documentation</h3>
+        <p>C of O processing, excision, gazette verification and title perfection — handled start to finish.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PROCESS ================= -->
+<section class="process" id="projects">
+  <div class="section-inner">
+    <div class="section-head reveal">
+      <div class="eyebrow">HOW WE WORK</div>
+      <h2>A survey process built on accuracy, at every step.</h2>
+      <p>Every plot we survey and every deal we broker follows the same disciplined method — so you can trust the boundary lines and the paperwork alike.</p>
+    </div>
+    <div class="process-steps">
+      <div class="process-step reveal">
+        <span class="p-mark">I.</span>
+        <h4>Site Reconnaissance</h4>
+        <p>We assess terrain, access and existing beacons before a single coordinate is logged.</p>
+      </div>
+      <div class="process-step reveal">
+        <span class="p-mark">II.</span>
+        <h4>GPS &amp; Instrument Survey</h4>
+        <p>Total station and RTK-GPS equipment capture boundary data to within centimetres.</p>
+      </div>
+      <div class="process-step reveal">
+        <span class="p-mark">III.</span>
+        <h4>Plan &amp; Registration</h4>
+        <p>Survey plans are drafted, cross-checked and lodged with the Oyo State Surveyor-General.</p>
+      </div>
+      <div class="process-step reveal">
+        <span class="p-mark">IV.</span>
+        <h4>Handover &amp; Title Support</h4>
+        <p>You receive your beacon certificate and full guidance through C of O processing.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ABOUT ================= -->
+<section class="about" id="about">
+  <div class="section-inner about-inner">
+    <div class="about-photo reveal">
+      <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1000&auto=format&fit=crop" alt="Modern luxury residential development in Ibadan at dusk">
+      <div class="about-badge">
+        <h4>15+ Years</h4>
+        <span>Trusted surveying &amp; real estate practice in Oyo State</span>
+      </div>
+    </div>
+    <div class="about-copy reveal">
+      <div class="eyebrow">WHY CLIENTS TRUST US</div>
+      <h2>Where technical precision meets real estate integrity.</h2>
+      <p>Meridian &amp; Co. was founded on a simple premise: land transactions in Nigeria should be as transparent and secure as anywhere in the world. Our registered surveyors and real estate professionals work side by side, so every plot we sell has already been verified by the same team that measured it.</p>
+      <p>We serve homeowners, diaspora investors and developers across Ibadan — from Bodija to Akobo, Ring Road to Alakia — with a single point of accountability from survey to signed title.</p>
+      <div class="trust-list">
+        <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg><span>Registered with the Surveyors Council of Nigeria (SURCON)</span></div>
+        <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg><span>Genuine, gazette-verified titles only</span></div>
+        <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg><span>Transparent pricing — no hidden agency fees</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section class="contact" id="contact">
+  <div class="section-inner">
+    <div class="section-head reveal">
+      <div class="eyebrow">VISIT OR CALL US</div>
+      <h2>Find us in the heart of Alakia, Ibadan.</h2>
+      <p>Walk in for a consultation, or call ahead to book a site survey. We're ready to help you move forward with confidence.</p>
+    </div>
+
+    <div class="contact-grid">
+      <div class="map-frame reveal">
+        <iframe
+          src="https://www.google.com/maps?q=Obembe+Shopping+Complex,+Hope+Street,+Off+Alakia+Rd,+Ibadan,+Oyo,+Nigeria&output=embed"
+          allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          title="Map showing Meridian & Co. office location in Alakia, Ibadan">
+        </iframe>
+      </div>
+
+      <div class="contact-card reveal">
+        <div class="cc-block">
+          <div class="cc-icon"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+          <div>
+            <h4>Office Address</h4>
+            <p>Shop 14, Obembe Shopping Complex,<br>Hope Street, Off Alakia Rd,<br>Ibadan, Oyo State, Nigeria</p>
+          </div>
+        </div>
+        <div class="cc-block">
+          <div class="cc-icon"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+          <div>
+            <h4>Call Us</h4>
+            <p><a href="tel:+2348071082497">0807 108 2497</a></p>
+          </div>
+        </div>
+        <div class="cc-block" style="flex-direction:column; gap:8px;">
+          <h4 style="margin-bottom:4px;">Business Hours</h4>
+          <div style="width:100%;">
+            <div class="cc-hours"><span>Monday – Friday</span><span>8:00 AM – 6:00 PM</span></div>
+            <div class="cc-hours"><span>Saturday</span><span>9:00 AM – 4:00 PM</span></div>
+            <div class="cc-hours"><span>Sunday</span><span>Closed</span></div>
+          </div>
+        </div>
+        <a href="tel:+2348071082497" class="btn btn-gold">Click to Call Now</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <a href="#home" class="logo">
+      <span class="logo-mark"><svg viewBox="0 0 24 24" fill="none" stroke="#E0BC7A" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 3v18M3 12h18"/></svg></span>
+      Meridian &amp; Co.
+    </a>
+    <span>&copy; 2026 Meridian &amp; Co. Surveyors &amp; Estate Agents · Ibadan, Nigeria</span>
+    <span>Shop 14, Obembe Shopping Complex, Alakia</span>
+  </div>
+</footer>
+
+<div class="mobile-call">
+  <a href="tel:+2348071082497" class="btn btn-gold">📞 Call 0807 108 2497</a>
+</div>
+
+<script>
+  // Nav scroll shadow
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 20);
+  });
+
+  // Mobile menu toggle (simple show/hide fallback for burger — links remain accessible via scroll)
+  const burger = document.querySelector('.burger');
+  const navLinks = document.querySelector('.nav-links');
+  burger.addEventListener('click', () => {
+    const open = navLinks.style.display === 'flex';
+    navLinks.style.display = open ? 'none' : 'flex';
+    navLinks.style.cssText += open ? '' : 'position:absolute; top:100%; left:0; right:0; background:#fff; flex-direction:column; padding:24px 32px; gap:20px; box-shadow:0 20px 30px -20px rgba(11,25,41,0.2);';
+  });
+
+  // Scroll reveal
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+  revealEls.forEach(el => io.observe(el));
+</script>
+
+</body>
+</html>
